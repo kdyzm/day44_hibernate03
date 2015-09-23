@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Student持久化类对应的映射文件 -->
+<hibernate-mapping>
+	<class lazy="true" table="stu" catalog="test" name="com.kdyzm.hibernate.domain.Student">
+		<cache usage="read-only"/>
+		<id column="sid" length="12" name="sid" type="long">
+			<generator class="increment"></generator>
+		</id>
+		<property name="sname" column="sname" type="string" length="32"></property>
+		<set fetch="join" lazy="extra" name="courses" table="course_stu" inverse="false" cascade="save-update">
+			<key column="sid"></key>
+			<many-to-many class="com.kdyzm.hibernate.domain.Course">
+				<column name="cid"></column>
+			</many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

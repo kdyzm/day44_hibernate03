@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+	<diskStore path="secondCache"/>
+	<defaultCache
+		name=""
+		maxElementsInMemory="15"
+		eternal="false"
+		timeToIdleSeconds="300"
+		timeToLiveSeconds="600"
+		overflowToDisk="true"
+		diskPersistent="false"
+	/>
+</ehcache>

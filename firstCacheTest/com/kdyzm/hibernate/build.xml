@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="initmysql" default="start" basedir=".">
+	<description>
+		初始化stu表和course表
+	</description>
+	<target name="start">
+		<echo>初始化表开始！</echo>
+		<sql driver="com.mysql.jdbc.Driver" 
+			 url="jdbc:mysql://localhost:3306/test" 
+			 userid="root" 
+			 password="5a6f38" 
+			 src="./sql.sql">
+			<classpath>
+				<pathelement location="./mysql-connector-java-5.1.18-bin.jar"/>
+			</classpath>
+		</sql>
+	</target>
+</project>
